@@ -29,20 +29,7 @@ export default function Perfil({ navigation }) {
           <MaterialCommunityIcons name="credit-card" size={35} color="#333" />
           <ScrollView style={styles.info}>
             <Text style={styles.title}>Pagamentos</Text>
-            <Text style={styles.description}>Meus saldos e cartões</Text>
-          </ScrollView>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.option} onPress={() => {}}>
-          <MaterialCommunityIcons
-            name="ticket-outline"
-            size={35}
-            color="#333"
-          />
-          <ScrollView style={styles.info}>
-            <Text style={styles.title}>Cupons</Text>
-            <Text style={styles.description}>Meus cupons de desconto</Text>
+            <Text style={styles.description}>Meus cartões</Text>
           </ScrollView>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
@@ -51,16 +38,7 @@ export default function Perfil({ navigation }) {
           <MaterialCommunityIcons name="heart-outline" size={35} color="#333" />
           <ScrollView style={styles.info}>
             <Text style={styles.title}>Favoritos</Text>
-            <Text style={styles.description}>Meus locais favoritos</Text>
-          </ScrollView>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.option} onPress={() => {}}>
-          <MaterialCommunityIcons name="credit-card" size={35} color="#333" />
-          <ScrollView style={styles.info}>
-            <Text style={styles.title}>Fidelidade</Text>
-            <Text style={styles.description}>Minhas fidelidades</Text>
+            <Text style={styles.description}>Meus times do coração</Text>
           </ScrollView>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
@@ -103,18 +81,11 @@ export default function Perfil({ navigation }) {
         <TouchableOpacity style={styles.opcoesAdicionais}>
           <View style={styles.wrapper}>
             <MaterialIcons name="store-mall-directory" size={25} color="#CDC" />
-            <Text style={styles.optionName}>Sugerir Restaurantes</Text>
+            <Text style={styles.optionName}>Sugerir Camisas</Text>
           </View>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.opcoesAdicionais}>
-          <View style={styles.wrapper}>
-            <MaterialCommunityIcons name="rocket" size={25} color="#CDC" />
-            <Text style={styles.optionName}>Seja parceiro!</Text>
-          </View>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
       </View>
     </ScrollView>
   );

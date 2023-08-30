@@ -11,43 +11,43 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 import api from '../../services/api';
 
-export default function Restaurantes() {
-  const [restaurantes, setRestaurantes] = useState([]);
+export default function Times() {
+  const [times, setTimes] = useState([]);
 
   useEffect(() => {
-    async function carregarRestaurantes() {
-      const response = await api.get('restaurants');
-      setRestaurantes(response.data);
+    async function carregarTimes() {
+      const response = await api.get('times');
+      setTimes(response.data);
     }
-    carregarRestaurantes();
+    carregarTimes();
   }, []);
 
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.titulo}>Restaurantes</Text>
+        <Text style={styles.titulo}>Times</Text>
       </View>
       <ScrollView style={styles.lista}>
-        {restaurantes.map((restaurante) => (
-          <TouchableOpacity style={styles.item} key={restaurante.id}>
+        {times.map((time) => (
+          <TouchableOpacity style={styles.item} key={time.id}>
             <Image
-              source={{ uri: restaurante.restaurant_url }} 
+              source={{ uri: time.time_url }} 
               style={styles.imagem}
             />
             <View style={styles.info}>
-              <Text style={styles.restauranteTitulo}>
+              <Text style={styles.timeTitulo}>
                 {' '}
-                {restaurante.title}{' '}
+                {time.title}{' '}
               </Text>
               <View style={styles.descricao}>
                 <MaterialIcons name="star" size={20} color="#FF7C01" />
                 <Text style={styles.estrela}>
-                  {restaurante.star || 'Novo!'}
+                  {time.star || 'Novo!'}
                 </Text>
-                <Text style={styles.categorias}> {restaurante.categories}</Text>
-                <Text style={styles.distancia}> {restaurante.distance}</Text>
+                <Text style={styles.categorias}> {time.categories}</Text>
+                <Text style={styles.distancia}> {time.distance}</Text>
               </View>
-              <Text style={styles.atraso}> {restaurante.delay} </Text>
+              <Text style={styles.atraso}> {time.delay} </Text>
             </View>
           </TouchableOpacity>
         ))}

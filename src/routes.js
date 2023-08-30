@@ -11,7 +11,6 @@ import Home from './screens/Home';
 import Busca from './screens/Busca';
 import Perfil from './screens/Perfil';
 import Pedidos from './screens/Pedidos';
-import PedidosAnteriores from './screens/PedidosAnteriores';
 import Pagamentos from './screens/Pagamentos';
 import Item from './screens/Item';
 
@@ -32,11 +31,6 @@ function PedidosRouter() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Pedidos" component={Pedidos} />
-      <Tab.Screen
-        name="PedidosAnteriores"
-        component={PedidosAnteriores}
-        options={{ tabBarLabel: 'Pedidos Anteriores' }} 
-      />
     </Tab.Navigator>
   );
 }
