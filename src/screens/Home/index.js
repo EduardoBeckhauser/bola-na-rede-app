@@ -4,7 +4,6 @@ import { ScrollView, StyleSheet } from 'react-native';
 import Endereco from '../../components/Home/Endereco';
 import Input from '../../components/Input';
 import Sugestoes from '../../components/Home/Sugestoes';
-import Ofertas from '../../components/Home/Ofertas';
 import Categorias from '../../components/Home/Categorias';
 import Times from '../../components/Home/Times';
 
@@ -14,7 +13,6 @@ export default function Home({ navigation }) {
       <Endereco />
       <Input placeholder="Busque por camisa ou conjunto" />
       <Sugestoes />
-      <Ofertas navigation={navigation} />
       <Categorias />
       <Times />
     </ScrollView>

@@ -1,116 +1,113 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
-  Image,
-  ScrollView,
-  View,
-  Text,
-  TouchableOpacity,
   StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
 } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
-import api from '../../services/api';
 
-export default function Times() {
-  const [times, setTimes] = useState([]);
-
-  useEffect(() => {
-    async function carregarTimes() {
-      const response = await api.get('times');
-      setTimes(response.data);
-    }
-    carregarTimes();
-  }, []);
+export default function Camisa() {
 
   return (
-    <View style={styles.container}>
-      <View>
-        <Text style={styles.titulo}>Times</Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.header}>
+        </View>
+        <Image
+          source={{
+            uri: 'https://acdn.mitiendanube.com/stores/001/865/527/products/camisa-titular-do-botafogo-2023-2024-reebok-1-removebg-preview1-9b3e8ff96a7bb975ea16923340767564-480-0.png',
+          }}
+          style={styles.imagem}
+        />
+        <Text style={styles.nome}>Camisa do Botafogo</Text>
+        <Text style={styles.valor}>R$300,00</Text>
+
+        <Image
+          source={{
+            uri: 'https://d2r9epyceweg5n.cloudfront.net/stores/002/090/372/products/corinthians1-456e64fac189e2cacf16555617061510-640-0.png',
+          }}
+          style={styles.imagem}
+        />
+        <Text style={styles.nome}>Camisa do Corinthians</Text>
+        <Text style={styles.valor}>R$200,00</Text>
+      
+        <Image
+          source={{
+            uri: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/596/products/19f097a4-removebg-preview1-a6333acd36f39f57df16526594317350-640-0.webp',
+          }}
+          style={styles.imagem}
+        />
+        <Text style={styles.nome}>Camisa do Fluminense</Text>
+        <Text style={styles.valor}>R$ 99,99</Text>
+        
+        <Image
+          source={{
+            uri: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/002/101/082/products/d9b8149f1-5baa5a8c746ce96ceb16520435654205-1024-1024-removebg-preview1-c265513449a353f3bb16620688441387-640-0.png',
+          }}
+          style={styles.imagem}
+        />
+        <Text style={styles.nome}>Camisa do Flamengo</Text>
+        <Text style={styles.valor}>R$ 59,99</Text>
+    
       </View>
-      <ScrollView style={styles.lista}>
-        {times.map((time) => (
-          <TouchableOpacity style={styles.item} key={time.id}>
-            <Image
-              source={{ uri: time.time_url }} 
-              style={styles.imagem}
-            />
-            <View style={styles.info}>
-              <Text style={styles.timeTitulo}>
-                {' '}
-                {time.title}{' '}
-              </Text>
-              <View style={styles.descricao}>
-                <MaterialIcons name="star" size={20} color="#FF7C01" />
-                <Text style={styles.estrela}>
-                  {time.star || 'Novo!'}
-                </Text>
-                <Text style={styles.categorias}> {time.categories}</Text>
-                <Text style={styles.distancia}> {time.distance}</Text>
-              </View>
-              <Text style={styles.atraso}> {time.delay} </Text>
-            </View>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 20,
-    marginLeft: 20,
-    marginRight: 0,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  titulo: {
-    fontSize: 23,
-    fontWeight: 'bold',
-  },
-  lista: {
-    marginTop: 10,
-  },
-  item: {
+  header: {
     flexDirection: 'row',
-    padding: 20,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: 'rgba(0,0,0,0.1)',
-    borderRadius: 4,
-    marginTop: 5,
-    marginRight: 15,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    width: '100%',
+    padding: 10,
+  },
+  quantidadeCarrinho: {
+    backgroundColor: 'red',
+    color: 'white',
+    fontWeight: 'bold',
+    borderRadius: 50,
+    padding: 5,
+    marginLeft: -10,
   },
   imagem: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 300,
+    height: 300,
+    marginBottom: 20,
   },
-  info: {
-    marginLeft: 15,
-  },
-  restauranteTitulo: {
+  nome: {
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#333',
+    marginBottom: 10,
   },
-  descricao: {
-    flexDirection: 'row',
-    marginTop: 3,
-    alignItems: 'center',
+  valor: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
   },
-  estrela: {
-    fontSize: 14,
-    color: '#999',
+  botao: {
+    backgroundColor: '#000',
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 20,
   },
-  categorias: {
-    fontSize: 14,
-    color: '#999',
+  textoBotao: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 18,
   },
-  distancia: {
-    fontSize: 14,
-    color: '#999',
-  },
-  atraso: {
-    marginTop: 15,
-    fontSize: 14,
-    color: '#999',
+  valorTotal: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 20,
   },
 });

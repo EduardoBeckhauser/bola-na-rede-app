@@ -34,11 +34,14 @@ export default function Perfil({ navigation }) {
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.option} onPress={() => {}}>
-          <MaterialCommunityIcons name="heart-outline" size={35} color="#333" />
+        <TouchableOpacity
+          style={styles.option}
+          onPress={() => navigation.navigate('Favoritos')}
+        >
+          <MaterialCommunityIcons name="credit-card" size={35} color="#333" />
           <ScrollView style={styles.info}>
             <Text style={styles.title}>Favoritos</Text>
-            <Text style={styles.description}>Meus times do coração</Text>
+            <Text style={styles.description}>Meu time Do Coração</Text>
           </ScrollView>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>

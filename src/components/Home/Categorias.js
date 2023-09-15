@@ -33,7 +33,7 @@ export default function Categorias() {
         {categorias.map((categoria) => (
           <TouchableOpacity key={categoria.id} style={styles.item}>
             <Image
-              source={{ uri: categoria.categorie_url }} 
+              source={{ uri: categoria.image }} 
               style={styles.imagem}
             />
             <Text style={styles.categoriaTitulo}>{categoria.title}</Text>

@@ -8,11 +8,11 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { MaterialIcons } from '@expo/vector-icons';
 
 import Home from './screens/Home';
-import Busca from './screens/Busca';
 import Perfil from './screens/Perfil';
 import Pedidos from './screens/Pedidos';
 import Pagamentos from './screens/Pagamentos';
 import Item from './screens/Item';
+import Favoritos from './screens/Favoritos';
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -40,6 +40,7 @@ function PerfilRoutes() {
     <Stack.Navigator>
       <Stack.Screen name="Perfil" component={Perfil} />
       <Stack.Screen name="Pagamentos" component={Pagamentos} />
+      <Stack.Screen name="Favoritos" component={Favoritos} />
     </Stack.Navigator>
   );
 }
@@ -63,16 +64,7 @@ export default function Routes() {
             ),
           }} 
         />
-        <BottomTab.Screen
-          name="Busca"
-          component={Busca}
-          options= {{
-            tabBarLabel: 'Busca',
-            tabBarIcon: ({ color }) => (
-              <MaterialIcons name="search" color={color} size={26} />
-            ),
-          }} 
-        />
+        
         <BottomTab.Screen
           name="PedidosRouter"
           component={PedidosRouter}
