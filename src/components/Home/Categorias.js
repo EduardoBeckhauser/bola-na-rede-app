@@ -7,36 +7,45 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import api from '../../services/api';
+
+import camisaService from '../../services/camisas';
 
 export default function Categorias() {
-  const [categorias, setCategorias] = useState([]);
+  const [camisas, setCamisas] = useState([]);
 
-  useEffect(() => {
-    async function carregarCategorias() {
-      const response = await api.get('categories');
-      setCategorias(response.data);
-    }
-    carregarCategorias();
+  const getCamisas = async () => {
+    const data = await camisaService.getAllCamisas();
+    setCamisas(data);
+  };
+
+  useEffect(async () => {
+    getCamisas();
   }, []);
+
+  const updateCamisas = async () => {
+    await getCamisas();
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.titulo}>Categorias</Text>
+        <Text style={styles.titulo}>Camisas</Text>
+        
       </View>
       <ScrollView
         showsHorizontalScrollIndicator={false}
         horizontal
         style={styles.lista}
       >
-        {categorias.map((categoria) => (
-          <TouchableOpacity key={categoria.id} style={styles.item}>
+        {camisas.map((camisa) => (
+          <TouchableOpacity key={camisa.id} style={styles.item}>
             <Image
-              source={{ uri: categoria.image }} 
+              source={{ uri: camisa.capa.url }} 
               style={styles.imagem}
             />
-            <Text style={styles.categoriaTitulo}>{categoria.title}</Text>
+            <Text style={styles.nome}>{camisa.capa.description}</Text>
+            <Text style={styles.valor}>R${camisa.preco}</Text>
+            <Text>Restam apenas {camisa.quantidade} camisas!</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -74,4 +83,15 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: '#999',
   },
+  nome: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  valor: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+
 });

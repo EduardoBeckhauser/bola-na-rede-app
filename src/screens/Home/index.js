@@ -14,7 +14,6 @@ export default function Home({ navigation }) {
       <Input placeholder="Busque por camisa ou conjunto" />
       <Sugestoes />
       <Categorias />
-      <Times />
     </ScrollView>
   );
 }
