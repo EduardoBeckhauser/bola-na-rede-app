@@ -11,10 +11,10 @@
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
     "@react-native-picker/picker": "2.4.8",
-    "@react-navigation/bottom-tabs": "^6.5.7",
+    "@react-navigation/bottom-tabs": "^6.5.9",
     "@react-navigation/material-top-tabs": "^6.6.3",
-    "@react-navigation/native": "^6.1.6",
-    "@react-navigation/stack": "^6.3.16",
+    "@react-navigation/native": "^6.1.8",
+    "@react-navigation/stack": "^6.3.18",
     "axios": "^1.5.0",
     "bootstrap": "^5.3.1",
     "expo": "~48.0.18",

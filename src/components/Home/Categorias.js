@@ -74,8 +74,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imagem: {
-    width: 200,
-    height: 120,
+    width: 250,
+    height: 290,
     borderRadius: 10,
   },
   categoriaTitulo: {
