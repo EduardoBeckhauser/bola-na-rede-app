@@ -1,23 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Fragment } from 'react';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { Fragment } from "react";
+import { RecoilRoot } from "recoil";
 
-import Routes from './src/routes';
+import Routes from "./src/routes";
 
 export default function App() {
   return (
-    <Fragment>
-      <StatusBar style="auto" />
-      <Routes />
-    </Fragment>
+    <RecoilRoot>
+      <Fragment>
+        <StatusBar style="auto" />
+        <Routes />
+      </Fragment>
+    </RecoilRoot>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
