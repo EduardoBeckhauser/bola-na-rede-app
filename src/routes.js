@@ -106,10 +106,22 @@ export default function Routes() {
             }}
           />
 
+<BottomTab.Screen
+            name="Endereco"
+            component={PerfilRoutes}
+            options={{
+              headerShown: false,
+              tabBarLabel: "Endereco",
+              tabBarIcon: ({ color }) => (
+                <MaterialIcons name="person" color={color} size={26} />
+              ),
+            }}
+          />
           <BottomTab.Screen
             name="Login"
             component={Login}
             options={{
+              headerShown: false,
               headerStyle: { backgroundColor: "black" },
               headerTitleStyle: {
                 color: "white",

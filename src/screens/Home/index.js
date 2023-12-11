@@ -11,7 +11,7 @@ export default function Home({ navigation }) {
   return (
     <ScrollView showsHorizontalScrollIndicator={true} style={styles.container}>
       <Endereco />
-      <Input placeholder="Busque por camisa ou conjunto" />
+      <Input placeholder="Busque por camisa" />
       <Sugestoes />
       <Categorias />
     </ScrollView>

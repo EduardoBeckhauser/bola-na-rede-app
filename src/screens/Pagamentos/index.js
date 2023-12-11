@@ -131,6 +131,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 10,
     paddingHorizontal: 10,
-    width: '100%',
+    width: '75%',
   },
 });

@@ -73,22 +73,6 @@ export default function Perfil({ navigation }) {
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.opcoesAdicionais}>
-          <View style={styles.wrapper}>
-            <MaterialIcons name="security" size={25} color="#CDC" />
-            <Text style={styles.optionName}>Segurança</Text>
-          </View>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.opcoesAdicionais}>
-          <View style={styles.wrapper}>
-            <MaterialIcons name="store-mall-directory" size={25} color="#CDC" />
-            <Text style={styles.optionName}>Sugerir Camisas</Text>
-          </View>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
-        </TouchableOpacity>
-
       </View>
     </ScrollView>
   );
